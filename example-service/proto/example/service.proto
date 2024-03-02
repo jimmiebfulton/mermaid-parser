@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package example.service;
+
+service ExampleService {
+    rpc FindExample(FindExampleRequest) returns (FindExampleResponse) {}
+    rpc CreateExample(CreateExampleRequest) returns (CreateExampleResponse) {}
+    rpc UpdateExample(UpdateExampleRequest) returns (UpdateExampleResponse) {}
+    rpc GetExampleList(GetExampleListRequest) returns (GetExampleListResponse) {}
+}
+
+message Id {
+    string value = 1;
+}
+
+message Example {
+    Id id = 1;
+    string contents = 2;
+}
+
+message FindExampleRequest {
+    Id id = 1;
+}
+
+message FindExampleResponse {
+    Example record = 1;
+}
+
+message CreateExampleRequest {
+    string contents = 1;
+}
+
+message CreateExampleResponse {
+    Example record = 1;
+}
+
+message UpdateExampleRequest {
+    Example record = 1;
+}
+
+message UpdateExampleResponse {
+    Example record = 1;
+}
+
+message GetExampleListRequest {
+    uint32 page_size = 1;
+    uint32 page = 2;
+}
+
+message GetExampleListResponse {
+    repeated Example records = 1;
+    uint32 total_pages = 2;
+}

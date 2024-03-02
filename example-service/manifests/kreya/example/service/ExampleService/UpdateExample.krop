@@ -1,0 +1,12 @@
+{
+  "details": {
+    "methodFqn": "example.service.ExampleService.UpdateExample"
+  },
+  "requests": [
+    {
+      "location": "UpdateExample-request.json"
+    }
+  ],
+  "operationType": "unary",
+  "invokerName": "grpc"
+}

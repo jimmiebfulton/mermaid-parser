@@ -1,0 +1,8 @@
+target/
+.idea/
+.vscode/
+
+# Do not check in local developer configuration
+.env
+example-service.yml
+example-service.yaml

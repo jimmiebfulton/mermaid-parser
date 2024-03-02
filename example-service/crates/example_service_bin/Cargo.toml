@@ -1,0 +1,28 @@
+[package]
+name = "example_service_bin"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "example-service"
+path = "src/main.rs"
+
+[dependencies]
+example_service_server = { path = "../example_service_server" }
+example_service_core = { path = "../example_service_core" }
+example_service_persistence = { path = "../example_service_persistence" }
+
+anyhow = "1.0"
+atty = "0.2"
+clap = { version ="3", features = ["cargo", "derive"] }
+config = { version = "0.12", default-features = false, features = ["yaml"] }
+dotenv = "0.15"
+serde = {version = "1.0", features = ["serde_derive"] }
+serde_yaml = "0.8"
+shellexpand = "2.1"
+tokio = {version = "1.17.0", features = ["rt-multi-thread", "time", "macros", "net", "signal"]}
+tracing = "0.1"
+tracing-attributes = "0.1"
+tracing-futures = "0.2"
+tracing-subscriber = { version ="0.3", features = ["json", "registry", "env-filter"] }
